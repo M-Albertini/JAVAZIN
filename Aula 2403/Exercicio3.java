@@ -3,16 +3,17 @@ import java.util.Scanner;
 
 class Produto {
 
-    String nprod;
-    double preco;
+    String PNproduto;
+    double Ppreco = 0;
 };
 
 class pedido {
     String nome;
-
+    double Qntd;
     int Npedido = 0;
 
 };
+
 class carrinho{
 
     ArrayList<pedido> carrinhos =new ArrayList<>(); // criando um array para lincar em 
@@ -20,50 +21,86 @@ class carrinho{
 
 public class Exercicio3 {
 
-    public static void main (String[] args) {
-            
-            class menu {
+         public static void  menu() {//Aqui ele é um metodo pq pode executar algo(imprimir)
                 System.out.println("====================");
-                System.out.println("1- Fazer pedido");
-                System.out.println("2- Cadastrar produto");
+                System.out.println("1- Cadastrar produto");
+                System.out.println("2- Fazer pedido");
                 System.out.println("3- Consultar pedido");
                 System.out.println("====================");
-            };
+            }
+            
+    public static void main (String[] args) {//Aqui será o onde tem a ação das classes
+            
+           
 
                 int i =0;
+                int operacao =0;
 
-                Exercicio3.menu();
+                Exercicio3.menu();//Chamando a classe menu
            
+                pedido f = new pedido();
+                
+
+
                 ArrayList<pedido> ped = new ArrayList<>(); //Criando um array list para pedidos 
-                ArrayList<Produto> prod = new ArrayList<>(); //Array list declarado
+                ArrayList<Produto> Arrayprod = new ArrayList<>(); //Array list declarado
            
+                Scanner entrada = new Scanner(System.in); // atribui o valor que o usuario digitar
+                System.out.println("O que deseja?"); //pergunta para o usuario o qu quer
+
+                operacao = entrada.nextInt();
+                entrada.nextLine();//Limpa o buffer( O enter ficou salvo no next int anteriror (lido como \n))
+
+                //System.out.println(operacao);
+                if (operacao == 1 ) {
+                    Produto pObjeto = new Produto();// instanciando (criando) o objeto 'pObjeto' para funcionar como um mini array guardando em apenas um lugar
+
+                    
+                    
+                    System.out.println("Qual nome do produto?");
+                    pObjeto.PNproduto = entrada.nextLine();//Atribui o valor inserido na variavel PNproduto, dentro do objeto
+                    //System.out.println(pObjeto.PNproduto);
+                    
+                    System.out.println("Qual o valor do produto?");
+                    pObjeto.Ppreco =entrada.nextInt();
+                    entrada.nextLine();
+
+                    Arrayprod.add(pObjeto);//Adiciona o objeto e suas variaveis dentro do array de produtos, podendo salvar mais de um produto por execução
+                    
+                    System.out.println("Produto cadastrado com sucesso");
+                        for(Produto a: Arrayprod){
+                            System.out.println("Nome do produto:" + a.PNproduto);
+                            System.out.println("O valor salvo foi:" + a.Ppreco);
+                        }
+                   
+                }
+               Exercicio3.menu();
+                
+            /*
                 for  (i =0; i<2; i++){ //Usa o i para repetir 3 vezes
                 
-                pedido f = new pedido();
-                Produto p = new Produto();// instanciando (criando) o objeto p para funcionar como um mini array guardando em apenas um lugar
                 
-                Scanner entrada = new Scanner(System.in); // atribui o valor que o usuario digitar
-                System.out.println("Qual o produto"); //pergunta para o usuario o qu quer
-                      
-                p.nprod = entrada.nextLine(); //nprod recebe o valor, que é armazenado no objeto "p" 
+                
+                     
+                p.PNproduto = entrada.nextLine(); //nprod recebe o valor, que é armazenado no objeto "p" 
 
                 Scanner entrada2 = new Scanner(System.in); 
                 System.out.println("Qual o preço");
 
-                p.preco = entrada2.nextInt();//preco recebe o valor e já armazena em p
+                p.Ppreco = entrada2.nextInt();//preco recebe o valor e já armazena em p
 
                 f.Npedido = i;
 
-                prod.add(p);
+                prod.add(p); //Adicionando as informações que estão dentro do objeto p dentro da classe produto
                 ped.add(f);
-            }
+            }*/
     
             
+ /*
+    for(Produto a:Arrayprod){
 
-    for(Produto a:prod)
-    {
-        System.out.println(a.nprod);
-        System.out.println(a.preco);
-}
+        System.out.println(a.PNproduto);
+        System.out.println(a.Ppreco);
+}*/
 }
 }
