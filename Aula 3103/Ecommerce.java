@@ -32,16 +32,13 @@ public class Ecommerce {
             
     public static void main (String[] args) {//Aqui será o onde tem a ação das classes
             
-           
-
-                
                 int operacao =0;
 
                 ArrayList<pedido> ped = new ArrayList<>(); //Criando um array list para pedidos 
                 ArrayList<Produto> Arrayprod = new ArrayList<>(); //Array list declarado
                 ArrayList<pedido> Arraypedido = new ArrayList<>();
             
-                while (operacao !=4) {//Enquanto não for dife
+                while (operacao !=4) {//Enquanto não for diferente de 4 ele executa
                     
                 Ecommerce.menu();//Chamando a classe menu
                 Scanner entrada = new Scanner(System.in); // atribui o valor que o usuario digitar
@@ -80,19 +77,19 @@ public class Ecommerce {
                     
                     for (int i = 0; i < Arrayprod.size(); i++){
 
-                    Produto ProdIndice =Arrayprod.get(i); //Cria um produto para exibir
-                    System.out.println( i +" Nome do produto: " + ProdIndice.PNproduto +" R$" + ProdIndice.Ppreco);
+                    Produto ProdIndice =Arrayprod.get(i); //imprime os produtos cadastrados
+                    System.out.println( i +"Produto: " + ProdIndice.PNproduto +"Valor R$" + ProdIndice.Ppreco); //O i do for age como a id do produto
                     }
                     
                     System.out.println("Qual deseja adicionar ao carrinho?");
-                    int ProdSelect = entrada.nextInt();// Consumidor insere a  opcao
-                    entrada.nextLine();
+                    int ProdSelect = entrada.nextInt();//  Insere a opção do que deseja
+                    entrada.nextLine();//Limpa a saida
                                      
                     //Leve validação
                     if (ProdSelect >= 0 && ProdSelect< Arrayprod.size()){
 
 
-                        Produto ProdEscolha = Arrayprod.get(ProdSelect);// Coloca o valor que o usuario informou como indice do 
+                        Produto ProdEscolha = Arrayprod.get(ProdSelect);// Coloca o valor que o usuario informou como indice do array list
                         
 
                         pedido PediObjeto = new pedido(); // Criando o objeto para salvar os pedidos e depois mandar para o arraylist
@@ -107,6 +104,10 @@ public class Ecommerce {
                     }
                     
                         
+                }else if (operacao == 3) {
+
+
+                    
                 }                                                     
                       
                 }
