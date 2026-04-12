@@ -1,7 +1,7 @@
 class contabancaria {
     double saldo = 578;
     int ndaconta = 91939;
-    
+
         void aplicaJuros(){
 
         }
@@ -18,7 +18,7 @@ class ContaCorrente extends contabancaria{
     }
 
 }
-class ContaPoupanca extends contabancaria{
+ class ContaPoupanca extends contabancaria{
 
     double jurosCP = 0.065;//=6.5%
 
