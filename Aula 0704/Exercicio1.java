@@ -19,7 +19,7 @@ class Aluno {
             this.idade=idade;
             System.out.println("Idade" + idade);//Já mostra a idade aqui
         }else{
-            System.out.println("Idade valida");
+            System.out.println("Idade Invalida");
         }
     }   
  
@@ -30,7 +30,7 @@ class Aluno {
 
         public static void main(String[] args) {
             Aluno Objetoaluno = new Aluno();
-            Objetoaluno.setIdade(19);//Atribui o valor para a variavel encapsulada idade
+            Objetoaluno.setIdade(-1);//Atribui o valor para a variavel encapsulada idade
             Objetoaluno.setNome("Magalu");
             System.out.println( Objetoaluno.getNome() );
         }
